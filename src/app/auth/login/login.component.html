@@ -1,0 +1,17 @@
+<section class="signup-form">
+  <form fxLayout="column" fxLayoutAlign="center center"[formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input type="text" matInput placeholder="Your e-mail" formControlName="email">
+      <mat-error *ngIf="formulario.get('email').errors?.email">El e-mail no es válido</mat-error>
+      <mat-error *ngIf="formulario.get('email').errors?.required">Este campo es requerido</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="password" matInput placeholder="Your password" formControlName="password">
+      <mat-error *ngIf="formulario.get('password').errors?.minlength">El password debe tener 6 caracteres o más</mat-error>
+      <mat-error *ngIf="formulario.get('password').errors?.required">Este campo es requerido</mat-error>
+    </mat-form-field>
+    <button *ngIf="!(isLoading$ | async)" type="submit" mat-raised-button color="primary" [disabled]="formulario.invalid">Submit</button>
+    <mat-spinner *ngIf="isLoading$ | async"></mat-spinner>
+  </form>
+</section>
+
