@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   // Your web app's Firebase configuration
   firebase: {
-    apiKey: "AIzaSyBIdfNKexKAkL3grH6FAcq6hqaSQwQaRUY",
+    apiKey: "--",
     authDomain: "ng-training-app-92723.firebaseapp.com",
     databaseURL: "https://ng-training-app-92723.firebaseio.com",
     projectId: "ng-training-app-92723",
